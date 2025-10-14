@@ -24,10 +24,10 @@ function darPause(){
 
 function playOuPause(){
     if (tocando === true) {
-    darPause;
+    darPause();
     }
     else{
-        darPlay;
+        darPlay();
     }
 };
 
@@ -35,6 +35,7 @@ function playOuPause(){
 playerOnOff.addEventListener("click", playOuPause);
 
 function proximaFaixa(){
+    audio.load();
     if(capitulo<quantidadeCapitulos){
         capitulo += 1;
         }
@@ -47,8 +48,9 @@ function proximaFaixa(){
 proximo.addEventListener("click",proximaFaixa)
 
 function faixaAnterior(){
-    if (capitulo == 0) {
-        capitulo = 10;
+    audio.load();
+    if (capitulo < 1) {
+        capitulo = quantidadeCapitulos;
     } else {
         capitulo -= 1;
     };
@@ -60,4 +62,5 @@ anterior.addEventListener("click", faixaAnterior)
 function incremento(){
     audio.src = "./audios/" + capitulo + ".mp3";
 } 
+
 
