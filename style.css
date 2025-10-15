@@ -29,10 +29,15 @@ svg{
 #pause{
     display: none;
 }
-.tocando .play {
+/* usa uma classe para duas situações
+classe "tocando" e o ID play ou pause lá do html  
+ela permite atualizar a visualização com javascript incluindo 
+a classe "tocando" ou removendo-a.
+*/
+.tocando #play {
   display: none;
 }
 
-.tocando .pause {
+.tocando #pause {
   display: block;
 }
