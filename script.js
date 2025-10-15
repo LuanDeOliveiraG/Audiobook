@@ -31,36 +31,39 @@ function playOuPause(){
     }
 };
 
-
 playerOnOff.addEventListener("click", playOuPause);
-
+function incremento(){
+    audio.src = "./audios/" + capitulo + ".mp3";
+} 
 function proximaFaixa(){
-    audio.load();
     if(capitulo<quantidadeCapitulos){
         capitulo += 1;
         }
     else { capitulo = 1;
         };
     nomeFaixa.innerText = "Faixa: " + capitulo;
+    incremento();
+    audio.load();
+    
     }
 
 
 proximo.addEventListener("click",proximaFaixa)
 
 function faixaAnterior(){
-    audio.load();
     if (capitulo < 1) {
         capitulo = quantidadeCapitulos;
     } else {
         capitulo -= 1;
     };
     nomeFaixa.innerText = "Faixa: " + capitulo;
+    incremento();
+    audio.load();
 }
 
 anterior.addEventListener("click", faixaAnterior)
 
-function incremento(){
-    audio.src = "./audios/" + capitulo + ".mp3";
-} 
+
+
 
 
