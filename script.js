@@ -38,13 +38,16 @@ function incremento(){
 function proximaFaixa(){
     if(capitulo<quantidadeCapitulos){
         capitulo += 1;
+        playerOnOff.classList.remove("tocando");
         }
-    else { capitulo = 1;
+    else { 
+        capitulo = 1;
+        playerOnOff.classList.remove("tocando");
         };
     nomeFaixa.innerText = "Faixa: " + capitulo;
+    
     incremento();
     audio.load();
-    playerOnOff.classList.remove("tocando");
     
     }
 
@@ -54,8 +57,10 @@ proximo.addEventListener("click",proximaFaixa)
 function faixaAnterior(){
     if (capitulo < 1) {
         capitulo = quantidadeCapitulos;
+        playerOnOff.classList.remove("tocando");
     } else {
         capitulo -= 1;
+        playerOnOff.classList.remove("tocando");
     };
     nomeFaixa.innerText = "Faixa: " + capitulo;
     incremento();
@@ -64,6 +69,7 @@ function faixaAnterior(){
 }
 
 anterior.addEventListener("click", faixaAnterior)
+
 
 
 
