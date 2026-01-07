@@ -44,6 +44,7 @@ function proximaFaixa(){
     nomeFaixa.innerText = "Faixa: " + capitulo;
     incremento();
     audio.load();
+    playerOnOff.classList.remove("tocando");
     
     }
 
@@ -59,9 +60,11 @@ function faixaAnterior(){
     nomeFaixa.innerText = "Faixa: " + capitulo;
     incremento();
     audio.load();
+    playerOnOff.classList.remove("tocando");
 }
 
 anterior.addEventListener("click", faixaAnterior)
+
 
 
 
